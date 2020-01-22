@@ -60,7 +60,7 @@ phases:
       # - terraform $TF_ACTION -no-color
     
      
-     - cd "$CODEBUILD_SRC_DIR"
+     - cd terraform
      
      - terraform init 
      
