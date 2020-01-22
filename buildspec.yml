@@ -29,6 +29,14 @@ phases:
 
       - "unzip -o terraform.zip"
 
+
+      # AWS  CLI Installation
+      
+      - sudo apt-get update
+      - sudo apt-get install awscli -y
+      - aws --version
+      
+      
   pre_build:
 
     commands:
