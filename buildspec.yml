@@ -71,11 +71,17 @@ phases:
     
      # - export TF_VAR_Secret_Key="$AWS_SECRET_ACCESS_KEY"
      
-     - echo $TF_VAR_Access_key
+     # - echo $TF_VAR_Access_key
      
-     - echo $TF_VAR_Secret_Key
+     #  - echo $TF_VAR_Secret_Key
      
+     - terraform validate
      
+     -
+     - export AWS_ACCESS_KEY_ID="[$AWS_ACCESS_KEY_I]"
+     
+     - export AWS_SECRET_ACCESS_KEY="[$AWS_SECRET_ACCESS_KEY]"
+      
      - terraform plan
      
       
