@@ -59,11 +59,11 @@ phases:
 
       # - terraform $TF_ACTION -no-color
 
-     # - terraform init
+     - terraform init
 
-     # - terraform plan -out=tfplan
+     - terraform plan
 
-     - terraform apply tfplannew
+     - terraform apply
      
       
 
