@@ -59,6 +59,7 @@ phases:
 
       # - terraform $TF_ACTION -no-color
      - pwd
+     - find  / -iname Terraform_Code
      - cd Terraform_Code
      
      - terraform init
