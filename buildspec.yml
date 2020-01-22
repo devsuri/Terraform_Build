@@ -59,6 +59,8 @@ phases:
 
       # - terraform $TF_ACTION -no-color
 
+     - cd Terraform_Code
+     
      - terraform init
 
      - terraform plan
