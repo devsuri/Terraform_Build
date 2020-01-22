@@ -35,6 +35,7 @@ phases:
       - apt-get update
       - apt-get install awscli -y
       - aws --version
+      - cat >> ~/.aws/config
       
       
   pre_build:
