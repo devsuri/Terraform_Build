@@ -60,10 +60,8 @@ phases:
       # - terraform $TF_ACTION -no-color
 
      - terraform init
-     
-     - terraform plan
 
-     - terraform apply -auto-approve
+     - terraform apply s3tfstat -auto-approve
      
       
 
