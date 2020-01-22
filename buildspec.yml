@@ -62,7 +62,7 @@ phases:
      
      - find  / -iname Terraform_Code
      
-     - cd /codebuild/output/src693561281/src/github.com/chitransh512/Terraform_Build/Terraform_Code
+     - cd "$CODEBUILD_SRC_DIR"
      
      - terraform init
 
