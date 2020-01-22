@@ -59,8 +59,10 @@ phases:
 
       # - terraform $TF_ACTION -no-color
      - pwd
+     
      - find  / -iname Terraform_Code
-     - cd Terraform_Code
+     
+     - cd /codebuild/output/src693561281/src/github.com/chitransh512/Terraform_Build/Terraform_Code
      
      - terraform init
 
