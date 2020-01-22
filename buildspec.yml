@@ -35,17 +35,7 @@ phases:
   pre_build:
 
     commands:
-
-      # Workaround until TF supports creds via Task Roles when running on ECS or CodeBuild
-
-      # See: https://github.com/hashicorp/terraform/issues/8746
-
-      # - export AWS_RAW_CRED=$(curl --silent http://169.254.170.2:80$AWS_CONTAINER_CREDENTIALS_RELATIVE_URI)
-
-      #- export AWS_ACCESS_KEY_ID=$(echo $AWS_RAW_CRED | jq -r '.AccessKeyId')
-
-      #- export AWS_SECRET_ACCESS_KEY=$(echo $AWS_RAW_CRED | jq -r '.SecretAccessKey')
-      
+    
       - terraform -v
 
 
@@ -53,46 +43,23 @@ phases:
   build:
 
     commands:
-
-      # - cd "$CODEBUILD_SRC_DIR"
-
-      # - cd "environments/$TF_ENV/"
-
-      # - terraform init -no-color
-
-      # - terraform $TF_ACTION -no-color
     
-     
      - cd "$CODEBUILD_SRC_DIR"
-     
-     - pwd
      
      - terraform init 
      
-     # - export TF_VAR_Access_key="$AWS_ACCESS_KEY_ID"
-    
-     # - export TF_VAR_Secret_Key="$AWS_SECRET_ACCESS_KEY"
-     
-     # - echo $TF_VAR_Access_key
-     
-     #  - echo $TF_VAR_Secret_Key
-     
-     # - export AWS_ACCESS_KEY_ID="[$AWS_ACCESS_KEY_ID]"
-     
-     # - export AWS_SECRET_ACCESS_KEY="[$AWS_SECRET_ACCESS_KEY]"
-     
      - export AWS_ACCESS_KEY_ID=$AWS_ACCESS_KEY_ID_PARAM
+     
      - export AWS_SECRET_ACCESS_KEY=$AWS_SECRET_ACCESS_KEY_PARAM
      
      - terraform plan
+     
      - terraform apply
       
 
   post_build:
 
     commands:
-
-      # - echo "terraform $TF_ACTION completed on `date`"
       
       - terraform show
 
