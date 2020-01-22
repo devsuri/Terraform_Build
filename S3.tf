@@ -3,7 +3,7 @@ provider "aws" {
   version = "~> 2.0"
   region  = "us-west-1"
   access_key = "AWS_ACCESS_KEY_ID"
-  secret_key = "mAWS_SECRET_ACCESS_KEY"
+  secret_key = "AWS_SECRET_ACCESS_KEY"
 }
 
 
