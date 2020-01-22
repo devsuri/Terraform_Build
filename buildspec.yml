@@ -62,8 +62,6 @@ phases:
      # - terraform init
 
      # - terraform plan -out=tfplan
-     
-     - cd Terraform_Build
 
      - terraform apply tfplan
      
