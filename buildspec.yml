@@ -61,7 +61,9 @@ phases:
 
      - terraform init
 
-     - terraform apply s3tfstat -auto-approve
+     - terraform plan -out=tfplan
+
+     - terraform apply tfplan
      
       
 
@@ -71,7 +73,7 @@ phases:
 
       # - echo "terraform $TF_ACTION completed on `date`"
       
-      - echo “Done”
+      - terraform show
 
 
 artifacts:
