@@ -75,6 +75,10 @@ phases:
      
      - terraform init 
      
+     - export TF_VAR_Access_key="AWS_ACCESS_KEY_ID"
+     
+     - export TF_VAR_Secret_Key="AWS_SECRET_ACCESS_KEY"
+     
      - terraform plan
      
       
