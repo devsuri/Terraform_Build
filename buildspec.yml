@@ -62,6 +62,8 @@ phases:
      
      - cd "$CODEBUILD_SRC_DIR"
      
+     - pwd
+     
      - terraform init 
      
      - terraform plan
