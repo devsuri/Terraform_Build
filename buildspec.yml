@@ -66,9 +66,9 @@ phases:
       
       - terraform show
       # - aws s3 ls
-      - ls -la 
       - terraform plan -out=s3tfplan
       - pwd
+      - ls -la 
 
 artifacts:
 
