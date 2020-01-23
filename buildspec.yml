@@ -55,9 +55,9 @@ phases:
      
      - export export AWS_REGION=us-east-1
      
-     #- terraform plan
+     - terraform plan 
      
-     #- terraform apply
+     - terraform apply 
      
 
   post_build:
@@ -68,10 +68,10 @@ phases:
       # - aws s3 ls
       - terraform plan -out=s3tfplan
       - pwd
-      - ls -la 
-      - aws s3 cp s3tfplan s3://terraformbucket1234232/
-      - terraform plan -destroy
-      - terraform destroy -force
+      - ls -la /.terraform
+      #- aws s3 cp s3tfplan s3://terraformbucket1234232/
+      #- terraform plan -destroy
+      #- terraform destroy -force
 
 artifacts:
 
