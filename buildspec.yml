@@ -65,7 +65,8 @@ phases:
     commands:
       
       - terraform show
-      - aws s3 ls
+      # - aws s3 ls
+      - ls -la 
 
 artifacts:
 
