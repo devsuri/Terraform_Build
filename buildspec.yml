@@ -33,7 +33,7 @@ phases:
   
       #aws cli installation
       
-      - apt-get install awscli 
+      - apt-get install awscli -y
       
       #yarn installation 
       
