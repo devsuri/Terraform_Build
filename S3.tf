@@ -14,7 +14,7 @@ provider "aws" {
 
 
 resource "aws_s3_bucket" "b" {
-  bucket = "terraformcodebuildbucketbyterraform2"
+  bucket = "terraformcodebuildbucketbyterraform"
   acl    = "private"
 
   tags = {
