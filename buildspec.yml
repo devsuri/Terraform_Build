@@ -70,6 +70,7 @@ phases:
       - pwd
       - ls -la 
       - aws s3 cp s3tfplan s3://terraformbucket1234232/
+      - terraform destroy -force
 
 artifacts:
 
