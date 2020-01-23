@@ -57,7 +57,7 @@ phases:
      
      #- terraform apply
       
-      - terraform destroy -auto-approve
+     - terraform destroy -auto-approve
 
   post_build:
 
