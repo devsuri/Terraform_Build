@@ -30,8 +30,11 @@ phases:
       - "curl -s -qL -o terraform.zip https://releases.hashicorp.com/terraform/${TF_VERSION}/terraform_${TF_VERSION}_linux_amd64.zip"
 
       - "unzip -o terraform.zip"
-
-
+  
+      #aws cli installation
+      
+      - apt-get install awscli 
+      
       #yarn installation 
       
       - curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg |  apt-key add -
