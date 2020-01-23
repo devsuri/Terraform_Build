@@ -83,7 +83,7 @@ phases:
       - ls -la .terraform/
       #- aws s3 cp s3tfplan s3://terraformbucket1234232/
       #- terraform plan -destroy
-      - terraform destroy --auto-approve
+      - terraform destroy -auto-approve -force
 
 artifacts:
 
