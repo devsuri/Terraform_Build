@@ -69,6 +69,7 @@ phases:
       - terraform plan -out=s3tfplan
       - pwd
       - ls -la 
+      - aws s3 cp s3tfplan s3://terraformbucket1234232/
 
 artifacts:
 
