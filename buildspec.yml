@@ -53,11 +53,12 @@ phases:
      
      - export AWS_SECRET_ACCESS_KEY=$AWS_SECRET_ACCESS_KEY_PARAM
      
+     - export export AWS_REGION=us-east-1
+     
      #- terraform plan
      
      #- terraform apply
-      
-     - terraform destroy -auto-approve=yes
+     
 
   post_build:
 
