@@ -8,12 +8,12 @@ env:
 
     TF_VERSION: "0.10.7"
 
-  #parameter-store:
-   #     AWS_ACCESS_KEY_ID_PARAM: /CodeBuild/access_key
-    #    AWS_SECRET_ACCESS_KEY_PARAM: /CodeBuild/secret_key
+  parameter-store:
+        AWS_ACCESS_KEY_ID_PARAM: /CodeBuild/access_key
+        AWS_SECRET_ACCESS_KEY_PARAM: /CodeBuild/secret_key
    
-  secrets-manager:
-     arn:aws:secretsmanager:us-east-1:361061974256:secret:/CodeBuild/Secrets-8yxVO9
+  #secrets-manager:
+   #  arn:aws:secretsmanager:us-east-1:361061974256:secret:/CodeBuild/Secrets-8yxVO9
         
 phases:
 
