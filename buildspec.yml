@@ -8,12 +8,15 @@ env:
 
     TF_VERSION: "0.10.7"
 
-  parameter-store:
-        AWS_ACCESS_KEY_ID_PARAM: /CodeBuild/access_key
-        AWS_SECRET_ACCESS_KEY_PARAM: /CodeBuild/secret_key
-        
+  #parameter-store:
+   #     AWS_ACCESS_KEY_ID_PARAM: /CodeBuild/access_key
+    #    AWS_SECRET_ACCESS_KEY_PARAM: /CodeBuild/secret_key
+   
+  secrets-manager:
+     arn:aws:secretsmanager:us-east-1:361061974256:secret:/CodeBuild/Secrets-8yxVO9
         
 phases:
+
 
   install:
 
@@ -67,6 +70,9 @@ phases:
      
      - export export AWS_REGION=us-east-1
      
+     - echo $AWS_ACCESS_KEY_ID
+     - echo $AWS_SECRET_ACCESS_KEY
+     
      #- terraform plan 
      
      #- terraform apply 
@@ -79,11 +85,11 @@ phases:
       - terraform show
       # - aws s3 ls
       #- terraform plan -out=s3tfplan
-      - pwd
-      - ls -la .terraform/
+      #- pwd
+      #- ls -la .terraform/
       #- aws s3 cp s3tfplan s3://terraformbucket1234232/
       #- terraform plan -destroy
-      - terraform destroy -auto-approve -force
+      #- terraform destroy -auto-approve -force
 
 artifacts:
 
