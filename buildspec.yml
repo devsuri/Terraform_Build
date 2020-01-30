@@ -19,7 +19,8 @@ phases:
 
 
   install:
-
+    runtime-versions:
+                python: 3.7
     commands:
 
       # install required binary
