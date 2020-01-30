@@ -71,9 +71,9 @@ phases:
      #- terraform plan 
      - KEY=`aws s3 ls s3://$TERRAFORM_BUCKET --recursive | sort | tail -n 1`
      - aws s3 cp s3://$TERRAFORM_BUCKET/$KEY .
+     - mv $KEY terraform.tfstate
      - pwd
      - ls -lthr
-     #- mv $KEY terraform.tfstate
      - terraform apply --auto-approve --var-file=$ENVIRONMENT_FILE
      #- aws s3 cp terraform.tfstate s3://$TERRAFORM_BUCKET
      - DATE=`date +%d-%m-%-y:%H:%M:%S`
