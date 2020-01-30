@@ -70,7 +70,8 @@ phases:
      
      #- terraform plan 
      
-     - terraform apply --auto-approve --var-file=$VARIABLE_FILE
+     - terraform apply --auto-approve --var-file=$ENVIRONMENT_FILE
+     - aws s3 cp terraform.tfstate s3://$TERRAFORM_BUCKET
      
 
   post_build:
