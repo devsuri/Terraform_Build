@@ -39,12 +39,6 @@ phases:
       
       - apt-get install awscli -y
       
-      #yarn installation 
-      
-      - curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg |  apt-key add -
-      - echo "deb https://dl.yarnpkg.com/debian/ stable main" |  tee /etc/apt/sources.list.d/yarn.list
-      - apt update &&  apt install yarn -y
-      
       
       
   pre_build:
@@ -53,7 +47,7 @@ phases:
     
       - terraform -v
       - aws --version
-      - yarn --version
+      #- yarn --version
 
 
 
@@ -76,7 +70,7 @@ phases:
      
      #- terraform plan 
      
-     #- terraform apply 
+     - terraform apply --auto-approve --var-file=$variable-file
      
 
   post_build:
