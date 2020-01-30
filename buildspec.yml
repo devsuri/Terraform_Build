@@ -73,8 +73,12 @@ phases:
      - aws s3 cp s3://$TERRAFORM_BUCKET/$KEY .
      - pwd
      - ls -lthr
-     #- terraform apply --auto-approve --var-file=$ENVIRONMENT_FILE
+     #- mv $KEY terraform.tfstate
+     - terraform apply --auto-approve --var-file=$ENVIRONMENT_FILE
      #- aws s3 cp terraform.tfstate s3://$TERRAFORM_BUCKET
+     - DATE=`date +%d-%m-%-y:%H:%M:%S`
+     - mv terraform.tfstate terraform.tfstate-$DATE
+     - aws s3 cp terraform.tfstate-$DATE s3://$TERRAFORM_BUCKET 
      
 
   post_build:
