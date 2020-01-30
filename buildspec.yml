@@ -45,8 +45,8 @@ phases:
 
     commands:
     
-      - terraform -v
-      - aws --version
+      #- terraform -v
+      #- aws --version
       #- yarn --version
 
 
