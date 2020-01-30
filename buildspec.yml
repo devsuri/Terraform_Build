@@ -70,7 +70,7 @@ phases:
      
      #- terraform plan 
      
-     - terraform apply --auto-approve --var-file=${VARIABLE_FILE}
+     - terraform apply --auto-approve --var-file=$VARIABLE_FILE
      
 
   post_build:
