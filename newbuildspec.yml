@@ -28,4 +28,5 @@ phases:
       #- "curl -s -qL -o /usr/bin/jq https://stedolan.github.io/jq/download/linux64/jq"
 
       - cat abc.ts
+      - echo $t
      
