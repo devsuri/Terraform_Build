@@ -1,0 +1,31 @@
+version: 0.2
+
+
+
+env:
+
+  variables:
+
+    TF_VERSION: "0.12.8"
+
+  #parameter-store:
+   #     AWS_ACCESS_KEY_ID_PARAM: /CodeBuild/access_key
+    #    AWS_SECRET_ACCESS_KEY_PARAM: /CodeBuild/secret_key
+   
+  secrets-manager:
+     /CodeBuild/Secrets: arn:aws:secretsmanager:us-east-1:361061974256:secret:/CodeBuild/Secrets-8yxVO9
+        
+phases:
+
+
+  install:
+    runtime-versions:
+                python: 3.7
+    commands:
+
+      # install required binary
+
+      #- "curl -s -qL -o /usr/bin/jq https://stedolan.github.io/jq/download/linux64/jq"
+
+      - cat 
+     
