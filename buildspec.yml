@@ -7,6 +7,7 @@ env:
   variables:
 
     TF_VERSION: "0.12.8"
+    T: 'test'
 
   #parameter-store:
    #     AWS_ACCESS_KEY_ID_PARAM: /CodeBuild/access_key
