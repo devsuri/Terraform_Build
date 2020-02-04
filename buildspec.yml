@@ -70,7 +70,7 @@ phases:
      - echo $AWS_SECRET_ACCESS_KEY
      
      #- terraform plan 
-     - KEY=`aws s3 ls s3://$TERRAFORM_BUCKET --recursive | sort | tail -n 1 | awk '{print $4}'`
+     - KEY=`aws s3 ls s3://$TERRAFORM_BUCKET --recursive | sort | tail -n 1 | awk '{print $4}' | cut -d "/" -f2`
      - aws s3 cp s3://$TERRAFORM_BUCKET/$KEY .
      - mv $KEY terraform.tfstate
      - pwd
