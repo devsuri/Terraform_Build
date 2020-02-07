@@ -14,7 +14,7 @@ env:
     #    AWS_SECRET_ACCESS_KEY_PARAM: /CodeBuild/secret_key
    
   secrets-manager:
-     /CodeBuild/Secrets: $SSM
+     /CodeBuild/Secrets: "$SSM"
     # /CodeBuild/Secrets: arn:aws:secretsmanager:us-east-1:361061974256:secret:/CodeBuild/Secrets-8yxVO9
         
 phases:
