@@ -15,7 +15,7 @@ env:
    
   secrets-manager:
      /CodeBuild/Secrets: $SSM
-     /CodeBuild/Secrets: arn:aws:secretsmanager:us-east-1:361061974256:secret:/CodeBuild/Secrets-8yxVO9
+    # /CodeBuild/Secrets: arn:aws:secretsmanager:us-east-1:361061974256:secret:/CodeBuild/Secrets-8yxVO9
         
 phases:
 
