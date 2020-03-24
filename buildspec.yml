@@ -28,7 +28,7 @@ phases:
       # install required binary
       - |
         if [ "abc" == "ProdEnv" ]; then
-        echo "this is dev env"
+        echo "this is dev env";
         fi
 
       #- "curl -s -qL -o /usr/bin/jq https://stedolan.github.io/jq/download/linux64/jq"
