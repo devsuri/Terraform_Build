@@ -2,12 +2,12 @@ version: 0.2
 
 
 
-env:
+#env:
 
-  variables:
+#  variables:
 
-    TF_VERSION: "0.12.8"
-    T: 'test'
+#    TF_VERSION: "0.12.8"
+#    T: 'test'
 
   #parameter-store:
    #     AWS_ACCESS_KEY_ID_PARAM: /CodeBuild/access_key
@@ -47,9 +47,9 @@ phases:
       
       
       
-  pre_build:
+#  pre_build:
 
-    commands:
+#    commands:
     
       #- terraform -v
       #- aws --version
@@ -57,9 +57,9 @@ phases:
 
 
 
-  build:
+#  build:
 
-    commands:
+#    commands:
     
      #- cd "$CODEBUILD_SRC_DIR"
      
