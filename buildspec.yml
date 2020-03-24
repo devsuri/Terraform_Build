@@ -27,7 +27,7 @@ phases:
 
       # install required binary
       - |
-        if [ "abc" == "ProdEnv" ]; then
+        if [[ "abc" == "ProdEnv" ]]; then
         echo "this is dev env";
         fi
 
