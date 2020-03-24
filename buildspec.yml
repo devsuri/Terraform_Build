@@ -1,9 +1,11 @@
 version: 0.2
+
 phases:
 
   build:
     commands:
       - |
-        if [ "$qaautomationenv" == "ProdEnv" ]; then
+        if expr [ "abc" == "ProdEnv" ]; then
+        #if [ "abc" == "ProdEnv" ]; then
         echo "this is dev env"
         fi
