@@ -13,33 +13,37 @@ env:
    #     AWS_ACCESS_KEY_ID_PARAM: /CodeBuild/access_key
     #    AWS_SECRET_ACCESS_KEY_PARAM: /CodeBuild/secret_key
    
-  secrets-manager:
-     /CodeBuild/Secrets: "$SSM"
+  #secrets-manager:
+  #   /CodeBuild/Secrets: "$SSM"
     # /CodeBuild/Secrets: arn:aws:secretsmanager:us-east-1:361061974256:secret:/CodeBuild/Secrets-8yxVO9
         
 phases:
 
 
-  install:
-    runtime-versions:
-                python: 3.7
+  #install:
+  #  runtime-versions:
+  #              python: 3.7
     commands:
 
       # install required binary
+      - |
+        if [ "abc" == "ProdEnv" ]; then
+        echo "this is dev env"
+        fi
 
-      - "curl -s -qL -o /usr/bin/jq https://stedolan.github.io/jq/download/linux64/jq"
+      #- "curl -s -qL -o /usr/bin/jq https://stedolan.github.io/jq/download/linux64/jq"
 
-      - "chmod +x /usr/bin/jq"
+      #- "chmod +x /usr/bin/jq"
 
-      - "cd /usr/bin"
+      #- "cd /usr/bin"
 
-      - "curl -s -qL -o terraform.zip https://releases.hashicorp.com/terraform/${TF_VERSION}/terraform_${TF_VERSION}_linux_amd64.zip"
+      #- "curl -s -qL -o terraform.zip https://releases.hashicorp.com/terraform/${TF_VERSION}/terraform_${TF_VERSION}_linux_amd64.zip"
 
-      - "unzip -o terraform.zip"
+      #- "unzip -o terraform.zip"
   
       #aws cli installation
       
-      - apt-get install awscli -y
+      #- apt-get install awscli -y
       
       
       
@@ -57,35 +61,35 @@ phases:
 
     commands:
     
-     - cd "$CODEBUILD_SRC_DIR"
+     #- cd "$CODEBUILD_SRC_DIR"
      
-     - terraform init 
+     #- terraform init 
      
      #- export AWS_ACCESS_KEY_ID=$AWS_ACCESS_KEY_ID_PARAM
      
      #- export AWS_SECRET_ACCESS_KEY=$AWS_SECRET_ACCESS_KEY_PARAM
      
-     - export export AWS_REGION=us-east-1
+     #- export export AWS_REGION=us-east-1
      
-     - echo $AWS_ACCESS_KEY_ID
-     - echo $AWS_SECRET_ACCESS_KEY
+     #- echo $AWS_ACCESS_KEY_ID
+     #- echo $AWS_SECRET_ACCESS_KEY
      
      #- terraform plan 
-     - KEY=`aws s3 ls s3://$TERRAFORM_BUCKET --recursive | sort | tail -n 1 | awk '{print $4}' | cut -d "/" -f2`
-     - aws s3 cp s3://$TERRAFORM_BUCKET/$KEY .
-     - mv $KEY terraform.tfstate
-     - pwd
-     - ls -lthr
+     #- KEY=`aws s3 ls s3://$TERRAFORM_BUCKET --recursive | sort | tail -n 1 | awk '{print $4}' | cut -d "/" -f2`
+     #- aws s3 cp s3://$TERRAFORM_BUCKET/$KEY .
+     #- mv $KEY terraform.tfstate
+     #- pwd
+     #- ls -lthr
      #- terraform apply --auto-approve --var-file=$ENVIRONMENT_FILE
      #- aws s3 cp terraform.tfstate s3://$TERRAFORM_BUCKET
-     - DATE=`date +%d-%m-%-y:%H:%M:%S`
-     - mv terraform.tfstate terraform.tfstate-$DATE
-     - aws s3 cp terraform.tfstate-$DATE s3://$TERRAFORM_BUCKET 
+     #- DATE=`date +%d-%m-%-y:%H:%M:%S`
+     #- mv terraform.tfstate terraform.tfstate-$DATE
+     #- aws s3 cp terraform.tfstate-$DATE s3://$TERRAFORM_BUCKET 
      
 
-  post_build:
+ # post_build:
 
-    commands:
+   # commands:
       
       #- terraform show
       # - aws s3 ls
@@ -96,8 +100,8 @@ phases:
       #- terraform plan -destroy
       #- terraform destroy -auto-approve -force
 
-artifacts:
+#artifacts:
 
-  files:
+ # files:
 
-     - '**/*'
+ #    - '**/*'
