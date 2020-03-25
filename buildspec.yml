@@ -11,8 +11,10 @@ phases:
       - echo ${CODEBUILD_GIT_BRANCH}
       - echo ${CODEBUILD_WEBHOOK_TRIGGER}
       - echo "${CODEBUILD_WEBHOOK_TRIGGER}"
-      - |
-        if expr "abc" == "abc"; then
-        #if [ "abc" == "ProdEnv" ]; then
+     - |
+       if expr "abc" == "abc"; then
         echo "this is dev env"
+        if expr "xyz" == "xyz"; then
+         mvn --help
         fi
+       fi
