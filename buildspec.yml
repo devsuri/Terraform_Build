@@ -5,7 +5,9 @@ phases:
   build:
     commands:
       - echo $CODEBUILD_GIT_BRANCH
-      - echo $CODEBUILD_WEBHOOK_TRIGGER
+      - echo ${CODEBUILD_GIT_BRANCH}
+      - echo ${CODEBUILD_WEBHOOK_TRIGGER}
+      - echo "${CODEBUILD_WEBHOOK_TRIGGER}"
       - |
         if expr "abc" == "abc"; then
         #if [ "abc" == "ProdEnv" ]; then
