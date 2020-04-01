@@ -4,8 +4,8 @@ phases:
 
   build:
     commands:
-      #- sh input.sh
-      - read -p "Enter your name : " name
+      - sh abc.sh
+      #- read -p "Enter your name : " name
       #- echo "Hi, $name. Let us be friends!"
       - export CODEBUILD_GIT_BRANCH="$(git symbolic-ref HEAD --short 2>/dev/null)"
       - CODEBUILD_GIT_BRANCH="$(git branch -a --contains HEAD | sed -n 2p | awk '{ printf $1 }')";
