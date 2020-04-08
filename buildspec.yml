@@ -21,6 +21,7 @@ phases:
               echo "Executing test on $qaautomationenv"
               # testing
               mvn clean test -DargLine=-Denv=${qaautomationenv} -Dsurefire.suiteXmlFiles=testNGExecution/sandbox.xml
+              # testing
           fi
         fi
       - |
