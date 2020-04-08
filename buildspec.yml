@@ -19,11 +19,13 @@ phases:
           echo "this is dev env"
           if expr "$qaautomationenv" == "devEnv"; then
               echo "Executing test on $qaautomationenv"
+              # testing
               mvn clean test -DargLine=-Denv=${qaautomationenv} -Dsurefire.suiteXmlFiles=testNGExecution/sandbox.xml
           fi
         fi
       - |
        if expr "abc" == "abc"; then
+          # testing
           echo "this is dev env"
           if expr "xyz" == "xyz"; then
               mvn --help
