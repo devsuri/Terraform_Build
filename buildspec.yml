@@ -19,6 +19,7 @@ phases:
             echo "abcd"
           except:
             continue
+        fi
       - |
         if expr "$code_source_branch" == "develop"; then
           echo "this is dev env"
