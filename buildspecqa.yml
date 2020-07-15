@@ -4,5 +4,5 @@ phases:
 
   build:
     commands:
-      - cd ../../qaautomation.py
+      - cd scripts
       - python qaautomation.py
