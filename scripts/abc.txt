@@ -1,0 +1,18 @@
+echo "1"
+echo "2"
+mvn help
+echo "3"
+
+
+#mvn clean test -DargLine=-Denv=testEnv -Dgroups=smoke -Dsurefire.suiteXmlFiles=testNGExecution/windows_smoke.xml
+#Below are the commands for execution of smoke suite on test env
+#mvn clean test -DargLine=-Denv=testEnv -Dgroups=smoke -Dsurefire.suiteXmlFiles=testNGExecution/mac.xml
+#mvn clean test -DargLine=-Denv=testEnv -Dgroups=mobile_smoke -Dsurefire.suiteXmlFiles=testNGExecution/iOS.xml
+#mvn clean test -DargLine=-Denv=testEnv -Dgroups=mobile_smoke -Dsurefire.suiteXmlFiles=testNGExecution/android.xml
+#mvn clean test -DargLine=-Denv=testEnv -Dgroups=mobile_smoke -Dsurefire.suiteXmlFiles=testNGExecution/iPad.xml
+#Below are the commands for execution of regression suite on test env
+#mvn clean test -DargLine=-Denv=testEnv -Dgroups=regression -Dsurefire.suiteXmlFiles=testNGExecution/windows_regression.xml
+#mvn clean test -DargLine=-Denv=testEnv -Dgroups=regression -Dsurefire.suiteXmlFiles=testNGExecution/mac.xml
+#mvn clean test -DargLine=-Denv=testEnv -Dgroups=mobile_regression -Dsurefire.suiteXmlFiles=testNGExecution/iOS.xml
+#mvn clean test -DargLine=-Denv=testEnv -Dgroups=mobile_regression -Dsurefire.suiteXmlFiles=testNGExecution/android.xml
+#mvn clean test -DargLine=-Denv=testEnv -Dgroups=mobile_regression -Dsurefire.suiteXmlFiles=testNGExecution/iPad.xml
