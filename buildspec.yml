@@ -14,7 +14,7 @@ phases:
       - echo ${CODEBUILD_GIT_BRANCH}
       - echo ${CODEBUILD_WEBHOOK_TRIGGER}
       - echo "${CODEBUILD_WEBHOOK_TRIGGER}"
-      - if expr "$code_source_branch" == "master"; then 
+      - if expr "abc" == "abc"; then 
           try:
             echo "abcd"
           except:
