@@ -14,10 +14,11 @@ phases:
       - echo ${CODEBUILD_GIT_BRANCH}
       - echo ${CODEBUILD_WEBHOOK_TRIGGER}
       - echo "${CODEBUILD_WEBHOOK_TRIGGER}"
-      - try:
-          echo "abcd"
-        catch:
-          continue
+      - if expr "$code_source_branch" == "master"; then 
+          try:
+            echo "abcd"
+          except:
+            continue
       - |
         if expr "$code_source_branch" == "develop"; then
           echo "this is dev env"
