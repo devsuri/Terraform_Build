@@ -38,3 +38,20 @@ phases:
               mvn --help
           fi
        fi
+#   post_build:
+#        commands:
+#            - bash -c "if [ /"$CODEBUILD_BUILD_SUCCEEDING/" == /"0/" ]; then exit 1; fi"
+#            - echo Build completed on `date`
+#    post_build:
+#        commands:
+#            - if [ $CODEBUILD_BUILD_SUCCEEDING = 1 ];
+#            - then echo Build completed on `date`; echo Starting deployment; zappa update dev; else echo Build failed ignoring deployment; fi
+#            - echo Deployment completed
+#        if [ $CODEBUILD_BUILD_SUCCEEDING = 1 ]
+#        then
+#        echo Build completed on `date`
+#        echo Starting deployment
+#        zappa update dev
+#        else
+#        echo Build failed ignoring deployment
+#        fi
