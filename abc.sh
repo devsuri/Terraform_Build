@@ -1,3 +1,3 @@
 #!/bin/bash
 read -p "Enter your name : " name
-echo "Hi, $name. Let us be friends!"
+echo "Hi, $name. Let us be friendsaa!"
